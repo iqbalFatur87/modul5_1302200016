@@ -53,7 +53,7 @@ namespace modul5_1302200016
             // menambahkan if apabila parameter video null
             if (video == null) return;
             
-            if (video.GetPlayCount() > int.MaxValue)
+            if (video.GetPlayCount() < int.MaxValue)
             {
                 this.uploadedVideos.Add(video);
             }
@@ -74,6 +74,11 @@ namespace modul5_1302200016
                 Console.WriteLine("Video " + nomor + ": " + video.GetJudul());
                 nomor++;
             }
+        }
+
+        public List<SayaTubeVideo> GetTubeVideos()
+        {
+            return uploadedVideos;
         }
 
     }
